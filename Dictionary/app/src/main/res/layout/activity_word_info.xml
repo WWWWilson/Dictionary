@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_F3F3F3"
+    tools:context=".WordInfoActivity">
+
+    <RelativeLayout
+        android:id="@+id/wordinfo_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/wordinfo_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/icon_back"
+            android:onClick="onClick"/>
+
+        <TextView
+            style="@style/titleTv"
+            android:text="@string/wordinfo_tv_title"/>
+
+        <ImageView
+            android:id="@+id/wordinfo_iv_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/icon_collection"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/wordinfo_tv_zi"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:textSize="70sp"
+        android:textColor="@color/red"
+        android:background="@mipmap/icon_text_bg"
+        android:gravity="center"
+        android:layout_below="@+id/wordinfo_layout_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/wordinfo_tv_pinyin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wordinfo_tv_zi"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/wordinfo_layout_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/wordinfo_tv_pinyin">
+
+        <TextView
+            android:id="@+id/wordinfo_tv_bushou"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="部首 : "
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/wordinfo_tv_bihua"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="笔画 : "
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/wordinfo_tv_wubi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="五笔 : "
+            android:textSize="16sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wordinfo_layout_explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/wordinfo_layout_center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/wordinfo_tv_explain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:onClick="onClick"
+            android:textColor="@color/red"
+            android:text="@string/wordinfo_tv_basic_explain"/>
+
+        <TextView
+            android:id="@+id/wordinfo_tv_detail_explain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:onClick="onClick"
+            android:textColor="@color/black"
+            android:text="@string/wordinfo_tv_detailed"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/wordinfo_lv_explain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/wordinfo_layout_explain"
+        android:divider="@color/grey_F3F3F3"
+        android:dividerHeight="2dp"/>
+</RelativeLayout>
